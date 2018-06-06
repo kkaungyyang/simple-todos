@@ -1,0 +1,36 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo List ({{incompleteCount}})</h1>
+
+      <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Tasks
+      </label>
+
+       {{> loginButtons}}
+
+
+      {{#if currentUser}}
+        <form class="new-task">
+            <br>
+            <label for="dueDate"> <span class="blue-color">Pick a due date</span></label>
+            <input type="date" name="dueDate" id="datepicker">
+            
+            <label for="dueDate"><span class="blue-color">Enter a task</span></label>
+            <input type="text" name="text"/>
+          
+        </form>
+      {{/if}}
+
+       
+    </header>
+ 
+ 
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+</body>

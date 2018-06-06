@@ -1,0 +1,27 @@
+<template name="task">
+  	<li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <button class="delete">&times;</button>
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+     {{#if isOwner}}
+      <button class="toggle-private">
+        {{#if private}}
+          Private
+        {{else}}
+          Public
+        {{/if}}
+      </button>
+    {{/if}}
+    <span class="text"><strong>{{username}}</strong> - {{text}} </span>
+    <br>
+    <br>
+	<span> DUE: <span class="custom-due-date">{{dueDate}}</span> </span>
+	<br>
+
+	<a class="btn btn-primary change-due-date"> Change </a>
+	 <span class="update-date hide"> 
+	 	<input style="padding: 6px; border-radius: 5px" type="date" name="newDueDate" id="newDatepicker"> 
+	 	<a class="save-btn btn btn-primary"> Save </a>
+	 </span> 
+	 	
+  </li>
+</template>
